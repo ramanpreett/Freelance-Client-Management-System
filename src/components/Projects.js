@@ -35,8 +35,8 @@ const Projects = () => {
 
       // Fetch projects and clients in parallel
       const [projectsRes, clientsRes] = await Promise.all([
-        axios.get(`${API_URL}/projects`, { headers }),
-        axios.get(`${API_URL}/clients`, { headers })
+        axios.get(`${API_URL}/api/projects`, { headers }),
+        axios.get(`${API_URL}/api/clients`, { headers })
       ]);
 
       setProjects(projectsRes.data);
@@ -52,7 +52,7 @@ const Projects = () => {
   const addProject = async (projectData) => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.post(`${API_URL}/projects`, projectData, {
+      const response = await axios.post(`${API_URL}/api/projects`, projectData, {
         headers: { Authorization: token }
       });
       setProjects([...projects, response.data]);
@@ -66,7 +66,7 @@ const Projects = () => {
   const updateProject = async (id, projectData) => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.patch(`${API_URL}/projects/${id}`, projectData, {
+      const response = await axios.patch(`${API_URL}/api/projects/${id}`, projectData, {
         headers: { Authorization: token }
       });
       setProjects(projects.map(p => p._id === id ? response.data : p));
@@ -80,7 +80,7 @@ const Projects = () => {
   const deleteProject = async (id) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`${API_URL}/projects/${id}`, {
+      await axios.delete(`${API_URL}/api/projects/${id}`, {
         headers: { Authorization: token }
       });
       setProjects(projects.filter(p => p._id !== id));

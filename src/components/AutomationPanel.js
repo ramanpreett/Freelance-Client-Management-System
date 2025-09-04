@@ -7,7 +7,7 @@ const AutomationPanel = ({ onClientCreated }) => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  const API_URL = process.env.REACT_APP_API_URL + "/automation";
+  const API_URL = process.env.REACT_APP_API_URL + "/api/automation";
 
   const [formData, setFormData] = useState({
     linkedinUrl: "",

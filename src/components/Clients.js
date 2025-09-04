@@ -4,7 +4,7 @@ import ClientForm from "./ClientForm";
 import ClientList from "./ClientList";
 import AutomationPanel from "./AutomationPanel";
 
-const API_URL = process.env.REACT_APP_API_URL + "/clients";
+const API_URL = process.env.REACT_APP_API_URL + "/api/clients";
 
 const Clients = () => {
   const [clients, setClients] = useState([]);

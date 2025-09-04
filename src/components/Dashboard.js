@@ -47,9 +47,9 @@ const Dashboard = () => {
 
       // Fetch all data in parallel
       const [clientsRes, invoicesRes, meetingsRes] = await Promise.all([
-        axios.get(`${API_URL}/clients`, { headers }),
-        axios.get(`${API_URL}/invoices`, { headers }),
-        axios.get(`${API_URL}/meetings`, { headers })
+        axios.get(`${API_URL}/api/clients`, { headers }),
+        axios.get(`${API_URL}/api/invoices`, { headers }),
+        axios.get(`${API_URL}/api/meetings`, { headers })
       ]);
 
       const clients = clientsRes.data;

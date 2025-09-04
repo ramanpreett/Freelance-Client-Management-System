@@ -4,8 +4,8 @@ import InvoiceForm from "./InvoiceForm";
 import InvoiceList from "./InvoiceList";
 import { generateInvoicePDF } from "../utils/pdfExport";
 
-const API_URL = process.env.REACT_APP_API_URL + "/invoices";
-const CLIENTS_URL = process.env.REACT_APP_API_URL + "/clients";
+const API_URL = process.env.REACT_APP_API_URL + "/api/invoices";
+const CLIENTS_URL = process.env.REACT_APP_API_URL + "/api/clients";
 
 const Invoices = () => {
   const [invoices, setInvoices] = useState([]);

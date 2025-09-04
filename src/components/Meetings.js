@@ -3,8 +3,8 @@ import axios from "axios";
 import MeetingForm from "./MeetingForm";
 import MeetingList from "./MeetingList";
 
-const API_URL = process.env.REACT_APP_API_URL + "/meetings";
-const CLIENTS_URL = process.env.REACT_APP_API_URL + "/clients";
+const API_URL = process.env.REACT_APP_API_URL + "/api/meetings";
+const CLIENTS_URL = process.env.REACT_APP_API_URL + "/api/clients";
 
 const Meetings = () => {
   const [meetings, setMeetings] = useState([]);
